@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fake News Detector</title>
+    <style>
+        * {
+            font-family: sans-serif;
+            background-color: antiquewhite;
+            ;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2F4F4F;
+            padding-top: 100px;
+            margin: 10px;
+        }
+
+        form {
+            text-align: center;
+            /* background-color: white; */
+        }
+
+        textarea {
+            width: 50%;
+            height: 100px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            resize: none;
+            background-color: white;
+        }
+
+        input[type=submit] {
+            width: 20%;
+            height: 30px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #2F4F4F;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        p {
+            text-align: center;
+            font-weight: bold;
+            color: #2F4F4F;
+        }
+
+        a {
+            text-decoration: none;
+            background-color: none;
+        }
+
+        .navbar {
+            width: 102%;
+            margin: -1%;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            float: right;
+            background: black;
+
+        }
+
+        .logo {
+            width: 100px;
+            cursor: pointer;
+            padding: 10px;
+            background: black;
+        }
+
+        .navbar ul li {
+            list-style: none;
+            display: inline-block;
+            margin: 0 20px;
+            position: relative;
+            background: black;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            text-transform: uppercase;
+            background: black;
+
+        }
+
+        .navbar ul li::after {
+            content: '';
+            height: 3px;
+            width: 0;
+            background: transparent;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            transition: 0.5s;
+        }
+
+        .navbar ul li:hover::after {
+            width: 100%;
+        }
+
+        button {
+            width: 150px;
+            padding: 15px 0;
+            text-align: center;
+            margin: 20px 10px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.5s ease;
+            border: 2px solid red;
+            background: transparent;
+            color: black;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        button:hover::after span {
+            width: 100%;
+            left: 100%;
+
+        }
+
+        /* button {
+            font-family: 'Poppins', sans-serif;
+            padding: 10px 20px;
+            font-size: 15px;
+            border: 2px solid white;
+            background: transparent;
+            color: white;
+            transition: all 0.5s ease;
+            cursor: pointer;
+            border-radius: 15px;
+        } */
+
+        button:hover {
+            background-color: red;
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <img src="WhatsApp Image 2023-10-20 at 20.29.20_942dd9aa.jpg" class="logo">
+        <ul>
+            <li><a href="#">home</a></li>
+            <li><a href="#about">about us</a></li>
+            <li><a href="#contact">contact us</a></li>
+
+        </ul>
+    </div>
+    <br>
+    <h1>Fake News Detector</h1>
+    <form method="POST">
+        <textarea name="news_text" rows="4" cols="50" placeholder="Enter the news text..."></textarea>
+        <br>
+        <a id="submit_button"><button type="submit" class="btn btn-secondary btn-sm"
+                id="submitButton">Submit</button></a>&nbsp;
+            
+    </form>
+    {% if result %}
+    <p>{{ result }}</p>
+    {% endif %}
+</body>
+
+</html>

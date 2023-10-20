@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        pre {
+            width: 90vw;
+            white-space: pre-wrap;
+            overflow: hidden;
+            font-size: 16.5px;
+            text-overflow: ellipsis;
+        }
+
+        button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 10px 40px;
+            border-radius: 10px;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+            width: 200px;
+            margin: 5px;
+        }
+
+        input {
+            position: absolute;
+            top: 44px;
+            right: 0;
+            padding: 10px 40px;
+            border-radius: 10px;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+            width: 200px;
+            margin: 5px;
+        }
+
+
+
+        @media print {
+            #printButton {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <button id="printButton">Print</button>
+        <form action="/custom" method="get">
+
+            <!-- <button> Save as draft </button> -->
+            <input type="submit" value="Customize">
+        </form>
+    </div>
+    <pre>
+            {{ reply }}
+    </pre>
+
+</body>
+<script>
+    document.getElementById("printButton").addEventListener("click", function () {
+        // Handle the button click event here
+        window.print();
+    });
+
+
+    // Listen for the Ctrl+P keyboard shortcut
+    document.addEventListener("keydown", function (event) {
+        if (event.ctrlKey && event.key === "p") {
+            // Prevent the default browser print dialog
+            event.preventDefault();
+
+            // Trigger the button click event
+            document.getElementById("printButton").click();
+        }
+    });
+
+
+</script>
+
+</html>
