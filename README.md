@@ -1,4 +1,4 @@
-# FactualEye #AI-ML #4thyear_project #FakeNewsDetector
+# FactualEye #AI-ML #FakeNewsDetector
 Project Title: "Fake News Detection Using Machine Learning"
 
 Description:
