@@ -1,0 +1,1 @@
+tell me if the following news or information is fake or real. Give the answer in either 'FAKE' or 'REAL'. Not only tell if the news is real or not but also tell the what is the real news if the news / information is 'FAKE'. Here is the News: Canada PM Trudeau says India making life hard for millions of people amid diplomatic crisis
